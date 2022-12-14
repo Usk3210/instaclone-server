@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-
+require('dotenv').config()
+mongoose.set("strictQuery", false);
 mongoose
-  .connect(
-    "mongodb+srv://suresh:hd2E44bHOwLoDw5V@cluster0.uycslw0.mongodb.net/?retryWrites=true&w=majority")
+  .connect(process.env.MONGOURL,{useNewUrlParser: true})
   .then(() => {
     console.log("Login successful");
   })

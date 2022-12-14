@@ -13,9 +13,11 @@ app.use(fileUpload({
     useTempFiles:true
 }))
 
+
 app.use(cors())
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json()); 
 app.use("",postRoute);
+
 
 app.listen(port ,()=>{ console.log(`Server is on 5050`)})
